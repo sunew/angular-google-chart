@@ -100,8 +100,14 @@
                             };
                         }
                         return $scope.chart;
-                    }, function () {
-                        drawAsync();
+                    }, function (newValue, oldValue) {
+                        debugger;
+                        if (newValue !== undefined) {
+                            drawAsync();
+                        } else if (newValue === undefined) {
+                            $elm.empty();
+                            $scope.chartWrapper = undefined;
+                        }
                     }, true); // true is for deep object equality checking
 
                     // Redraw the chart if the window is resized
