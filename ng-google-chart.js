@@ -101,7 +101,6 @@
                         }
                         return $scope.chart;
                     }, function (newValue, oldValue) {
-                        debugger;
                         if (newValue !== undefined) {
                             drawAsync();
                         } else if (newValue === undefined) {
